@@ -20,7 +20,6 @@ skin.panels = {
 			ES:RegisterFrameShadows(self)
 		end
 		self.TitleBar:StripTextures()
-		S:HandleCloseButton(self.TitleBar.CloseButton)
 		S:HandleCloseButton(self.TitleBar.MinimizeButton, nil, "-")
 		S:HandleCloseButton(self.TitleBar.LockButton, nil, "")
 		S:HandleCloseButton(self.TitleBar.SinglePanelButton, nil, "=")
