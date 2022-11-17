@@ -342,7 +342,7 @@ skin.panels = {
 		self.Prompt:StripTextures()
 		self.Prompt:SetTemplate("Default")
 		S:HandleEditBox(self.EditBox)
-		self.EditBox:SetBackdrop({})
+		--self.EditBox:SetBackdrop({})
 		--S:HandleButton(self.TabPicker)
 		Mixin(self.TabPicker, BackdropTemplateMixin)
 		self.TabPicker:StripTextures()
@@ -367,22 +367,22 @@ skin.panels = {
 			end
 		end
 		S:HandleCheckBox(self.CheckButton)
-		self.CollectionReport.ChartTypeComboBox:SetBackdrop({})
-		self.CollectionReport.Chart:SetBackdrop({})
+		--self.CollectionReport.ChartTypeComboBox:SetBackdrop({})
+		--self.CollectionReport.Chart:SetBackdrop({})
 		S:HandleEditBox(self.SaveAs.Name)
-		self.SaveAs.Name:SetBackdrop({})
+		--self.SaveAs.Name:SetBackdrop({})
 		S:HandleEditBox(self.SaveAs.Target)
 		Mixin(self.SaveAs.Target, BackdropTemplateMixin)
 		self.SaveAs.Target:StripTextures()
 		self.SaveAs.Target:SetTemplate("Default")
 		S:HandleEditBox(self.ScriptFilter.Name)
-		self.ScriptFilter.Name:SetBackdrop({})
+		--self.ScriptFilter.Name:SetBackdrop({})
 		for i = 1, 3 do
 			S:HandleButton(self.ScriptFilter.ReferenceButtons[i])
 		end
 		for _, button in ipairs({"MinHP", "MaxHP", "MinXP", "MaxXP"}) do
 			S:HandleEditBox(self.Preferences[button])
-			self.Preferences[button]:SetBackdrop({})
+			--self.Preferences[button]:SetBackdrop({})
 		end
 		S:HandleCheckBox(self.Preferences.AllowMM)
 		local handledExpectedDD
@@ -481,10 +481,10 @@ skin.misc = {
 		self.Content:SetTemplate("Default")
 		for _, stat in ipairs({"Wins", "Losses", "Draws"}) do
 			S:HandleEditBox(self.Content[stat].EditBox)
-			self.Content[stat].EditBox:SetBackdrop(
+			--[[self.Content[stat].EditBox:SetBackdrop(
 				{bgFile = "Interface\\ChatFrame\\ChatFrameBackground", insets = {left = 3, right = 3, top = 3, bottom = 3}}
 			)
-			self.Content[stat].EditBox:SetBackdropColor(0, 0, 0)
+			self.Content[stat].EditBox:SetBackdropColor(0, 0, 0)]]
 			S:HandleButton(self.Content[stat].Add)
 			self.Content[stat].Add.IconBorder:Hide()
 		end
