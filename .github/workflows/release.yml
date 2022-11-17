@@ -8,6 +8,14 @@ on:
       - '**'
 
 jobs:
+  stylua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JohnnyMorganz/stylua-action@v1.1.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: .
   release:
     runs-on: ubuntu-latest
     env:
