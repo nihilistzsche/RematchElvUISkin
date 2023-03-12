@@ -587,7 +587,7 @@ function skin:HandleAutoScrollFrame(listFrame)
 	-- scrollBar.thumbbg = CreateFrame("Frame", nil, scrollBar)
 	-- scrollBar.thumbbg:Point("TOPLEFT", scrollBar:GetThumbTexture(), "TOPLEFT", 2, -thumbTrimY)
 	-- scrollBar.thumbbg:Point("BOTTOMRIGHT", scrollBar:GetThumbTexture(), "BOTTOMRIGHT", -thumbTrimX, thumbTrimY)
-	scrollBar:SetThumbTexture("Interface\\AddOns\\ElvUI\\media\\textures\\melli")
+	scrollBar:SetThumbTexture("Interface\\AddOns\\ElvUI\\core\\media\\textures\\melli")
 	scrollBar:GetThumbTexture():SetVertexColor(0.5, 0.5, 0.5)
 	scrollBar:GetThumbTexture():Size(14, 14)
 
