@@ -6,7 +6,7 @@ local E, L, P, G = unpack(ElvUI)
 local S = E:GetModule("Skins")
 
 local ES
-if IsAddOnLoaded("ProjectAzilroka") or IsAddOnLoaded("ElvUI_NihilsitzscheUI") then
+if C_AddOns.IsAddOnLoaded("ProjectAzilroka") or C_AddOns.IsAddOnLoaded("ElvUI_NihilsitzscheUI") then
 	ES = _G.EnhancedShadows
 end
 
@@ -598,23 +598,12 @@ end
 local f = CreateFrame("Frame")
 f:SetScript("OnEvent", function(self, event, ...)
 	rematch = Rematch
-	local majorVersion, minorVersion = (GetAddOnMetadata("Rematch", "Version") or ""):match("^(%d+)%.(%d+)")
+	local majorVersion, minorVersion = (C_AddOns.GetAddOnMetadata("Rematch", "Version") or ""):match("^(%d+)%.(%d+)")
 	if majorVersion then -- keeping this so dialog appears when Rematch 5.0 eventually released
 		majorVersion, minorVersion = tonumber(majorVersion), tonumber(minorVersion)
 		if majorVersion < 4 or majorVersion > 4 or (majorVersion == 4 and minorVersion < 3) then
-			local dialog = rematch:ShowDialog("CantElvUISkin", 300, 164, "Rematch Needs Updated", nil, nil, nil, OKAY)
-			dialog:ShowText(
-				format(
-					"This version of Rematch ElvUI Skin supports Rematch version 4.3 through 4.9.\n\nYour Rematch is version %d.%d",
-					majorVersion,
-					minorVersion
-				),
-				260,
-				96,
-				"TOP",
-				0,
-				-32
-			)
+			-- Using print instead of ShowDialog
+			print("|cFFFF0000Rematch ElvUI Skin Warning:|r This version supports Rematch 4.3-4.9, but you have version " .. majorVersion .. "." .. minorVersion)
 			return
 		else
 			C_Timer.After(0, function()
